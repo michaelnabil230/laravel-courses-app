@@ -2,11 +2,12 @@
 
 namespace App\Providers;
 
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/dashboard';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -33,8 +34,14 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            Route::middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
+                ->prefix(LaravelLocalization::setLocale())
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
+                ->prefix(LaravelLocalization::setLocale() . '/dashboard')
+                ->name('dashboard.')
+                ->group(base_path('routes/dashboard.php'));
         });
     }
 
