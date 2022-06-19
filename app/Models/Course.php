@@ -4,14 +4,14 @@ namespace App\Models;
 
 use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 class Course extends Model
 {
-    use SoftDeletes, Auditable, HasTranslations;
+    use SoftDeletes;use Auditable;use HasTranslations;
 
     /**
      * The attributes that are mass assignable.
@@ -57,6 +57,7 @@ class Course extends Model
     {
         return $this->belongsTo(Location::class);
     }
+
     /**
      * The students that belong to the Course
      *

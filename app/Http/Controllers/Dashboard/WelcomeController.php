@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\User;
 use App\Models\Admin;
+use App\Models\Course;
 use App\Models\Student;
 use App\Models\Trainer;
-use App\Models\Course;
+use App\Models\User;
 
 class WelcomeController
 {

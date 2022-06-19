@@ -37,24 +37,24 @@ class AdminRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255'
+                'max:255',
             ],
             'email' => [
                 'required',
                 'email',
-                'unique:admins,email'
+                'unique:admins,email',
             ],
             'password' => [
                 'required',
                 'string',
                 'min:8',
-                'confirmed'
+                'confirmed',
             ],
             'permissions' => [
                 'required',
                 'array',
-                'min:1'
-            ]
+                'min:1',
+            ],
         ];
     }
 
@@ -69,28 +69,28 @@ class AdminRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255'
+                'max:255',
             ],
             'email' => [
                 'required',
                 'email',
-                'unique:admins,email.' . $this->admin->id
+                'unique:admins,email.' . $this->admin->id,
             ],
             'password' => [
                 'nullable',
                 'string',
                 'min:8',
-                'confirmed'
+                'confirmed',
             ],
             'confirm_password' => [
                 'required_with:password',
-                'same:password'
+                'same:password',
             ],
             'permissions' => [
                 'required',
                 'array',
-                'min:1'
-            ]
+                'min:1',
+            ],
         ];
     }
 }

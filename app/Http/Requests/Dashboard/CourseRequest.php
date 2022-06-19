@@ -36,11 +36,11 @@ class CourseRequest extends FormRequest
         $rules = [
             'trainer_id' => [
                 'required',
-                'exists:trainers,id'
+                'exists:trainers,id',
             ],
             'location_id' => [
                 'required',
-                'exists:locations,id'
+                'exists:locations,id',
             ],
             'start_at' => [
                 'required',
@@ -60,6 +60,7 @@ class CourseRequest extends FormRequest
                 $locale . '.title' => ['required'],
             ];
         } //end of for each
+
         return $rules;
     }
 
@@ -73,11 +74,11 @@ class CourseRequest extends FormRequest
         $rules = [
             'trainer_id' => [
                 'required',
-                'exists:trainers,id'
+                'exists:trainers,id',
             ],
             'location_id' => [
                 'required',
-                'exists:locations,id'
+                'exists:locations,id',
             ],
             'start_at' => [
                 'required',
@@ -97,6 +98,7 @@ class CourseRequest extends FormRequest
                 $locale . '.title' => ['required'],
             ];
         } //end of for each
+
         return $rules;
     }
 }

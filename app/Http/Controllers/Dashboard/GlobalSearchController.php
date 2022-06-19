@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use App\Models\Admin;
-use App\Models\User;
 use App\Models\Student;
 use App\Models\Trainer;
-use Illuminate\Support\Str;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class GlobalSearchController extends Controller
 {
@@ -23,7 +23,7 @@ class GlobalSearchController extends Controller
     {
         $search = $request->input('search');
 
-        abort_if($search === null || !isset($search['term']), 400);
+        abort_if($search === null || ! isset($search['term']), 400);
 
         $term = $search['term'];
         $searchableData = [];

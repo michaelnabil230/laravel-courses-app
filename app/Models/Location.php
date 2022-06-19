@@ -4,12 +4,12 @@ namespace App\Models;
 
 use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 class Location extends Model
 {
-    use SoftDeletes, Auditable, HasTranslations;
+    use SoftDeletes;use Auditable;use HasTranslations;
 
     /**
      * The attributes that are mass assignable.

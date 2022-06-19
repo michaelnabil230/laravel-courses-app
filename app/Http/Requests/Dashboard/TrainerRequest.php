@@ -37,18 +37,18 @@ class TrainerRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255'
+                'max:255',
             ],
             'phone' => [
                 'required',
                 'numeric',
                 'regex:/^(01)[0-2,5]{1}[0-9]{8}$/',
-                'unique:trainers,phone'
+                'unique:trainers,phone',
             ],
             'note' => [
                 'sometimes',
-                'nullable'
-            ]
+                'nullable',
+            ],
         ];
     }
 
@@ -63,18 +63,18 @@ class TrainerRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255'
+                'max:255',
             ],
             'phone' => [
                 'required',
                 'numeric',
                 'regex:/^(01)[0-2,5]{1}[0-9]{8}$/',
-                'unique:trainers,phone.' . $this->trainer->id
+                'unique:trainers,phone.' . $this->trainer->id,
             ],
             'note' => [
                 'sometimes',
-                'nullable'
-            ]
+                'nullable',
+            ],
         ];
     }
 }

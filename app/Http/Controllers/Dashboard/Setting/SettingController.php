@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard\Setting;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
@@ -18,7 +18,7 @@ class SettingController extends Controller
                 'required',
                 'numeric',
                 'regex:/^(01)[0-2,5]{1}[0-9]{8}$/',
-            ]
+            ],
         ]);
 
         if ($request->logo) {

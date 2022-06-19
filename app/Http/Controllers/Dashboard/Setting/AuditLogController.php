@@ -20,6 +20,7 @@ class AuditLogController
     public function show(AuditLog $auditLog)
     {
         $auditLog->load('admin:id,name');
+
         return view('dashboard.setting.auditLogs.show', compact('auditLog'));
     }
 }

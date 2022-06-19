@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use App\Traits\Auditable;
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
-use App\Notifications\Admin\Auth\VerifyEmail;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Notifications\Admin\Auth\ResetPassword;
+use App\Notifications\Admin\Auth\VerifyEmail;
+use App\Traits\Auditable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
-    use Notifiable, HasRoles, SoftDeletes, Auditable;
+    use Notifiable;use HasRoles;use SoftDeletes;use Auditable;
 
     /**
      * The attributes that are mass assignable.

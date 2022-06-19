@@ -41,12 +41,12 @@ return [
                 'cache' => [
                     'enableCache' => false,
                     'cacheTtl' => 15, // TTL in seconds.
-                ]
+                ],
             ],
         ],
 
         'redis' => [
-            'driver'  => MichaelNabil230\LaravelSetting\Stores\RedisSettingStore::class,
+            'driver' => MichaelNabil230\LaravelSetting\Stores\RedisSettingStore::class,
             'options' => [
                 'client' => 'predis',
                 'default' => [
@@ -61,7 +61,7 @@ return [
             'driver' => MichaelNabil230\LaravelSetting\Stores\JsonSettingStore::class,
             'options' => [
                 'path' => storage_path('settings.json'),
-            ]
+            ],
         ],
     ],
 

@@ -37,13 +37,13 @@ class StudentRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255'
+                'max:255',
             ],
             'phone' => [
                 'required',
                 'numeric',
                 'regex:/^(01)[0-2,5]{1}[0-9]{8}$/',
-                'unique:students,phone'
+                'unique:students,phone',
             ],
             'birthday' => [
                 'required',
@@ -51,8 +51,8 @@ class StudentRequest extends FormRequest
             ],
             'note' => [
                 'sometimes',
-                'nullable'
-            ]
+                'nullable',
+            ],
         ];
     }
 
@@ -67,13 +67,13 @@ class StudentRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255'
+                'max:255',
             ],
             'phone' => [
                 'required',
                 'numeric',
                 'regex:/^(01)[0-2,5]{1}[0-9]{8}$/',
-                'unique:students,phone.' . $this->student->id
+                'unique:students,phone.' . $this->student->id,
             ],
             'birthday' => [
                 'required',
@@ -81,8 +81,8 @@ class StudentRequest extends FormRequest
             ],
             'note' => [
                 'sometimes',
-                'nullable'
-            ]
+                'nullable',
+            ],
         ];
     }
 }

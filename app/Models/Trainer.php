@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Trainer extends Model
 {
-    use SoftDeletes, Auditable;
+    use SoftDeletes;use Auditable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +18,7 @@ class Trainer extends Model
     protected $fillable = [
         'name',
         'phone',
-        'note'
+        'note',
     ];
 
     /**
@@ -29,6 +29,6 @@ class Trainer extends Model
     public static $searchable = [
         'name',
         'phone',
-        'note'
+        'note',
     ];
 }

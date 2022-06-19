@@ -43,7 +43,7 @@ class AdminController extends Controller
     {
         $validated = $request->safe()->except(['password', 'password_confirmation', 'permissions']);
         $admin = Admin::create($validated + [
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
         $admin->syncRoles('admin');
         $admin->syncPermissions($request->permissions);
@@ -63,7 +63,7 @@ class AdminController extends Controller
         $validated = $request->safe()->except(['password', 'password_confirmation', 'permissions']);
 
         $admin->update($validated + [
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
         $admin->syncPermissions($request->permissions);
 

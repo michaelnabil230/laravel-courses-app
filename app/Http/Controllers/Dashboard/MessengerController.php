@@ -111,7 +111,7 @@ class MessengerController extends Controller
     {
         $user = auth('admin')->user();
 
-        abort_if(!in_array($user->id, [$topic->creator_id, $topic->receiver_id]), 401);
+        abort_if(! in_array($user->id, [$topic->creator_id, $topic->receiver_id]), 401);
     }
 
     public function destroyTopic(QaTopic $topic): RedirectResponse

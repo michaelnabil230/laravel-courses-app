@@ -39,6 +39,7 @@ class LocationRequest extends FormRequest
                 $locale . '.name' => ['required'],
             ];
         } //end of for each
+
         return $rules;
     }
 
@@ -55,6 +56,7 @@ class LocationRequest extends FormRequest
                 $locale . '.name' => ['required'],
             ];
         } //end of for each
+
         return $rules;
     }
 }

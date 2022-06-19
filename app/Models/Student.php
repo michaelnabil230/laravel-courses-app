@@ -4,12 +4,12 @@ namespace App\Models;
 
 use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    use SoftDeletes, Auditable;
+    use SoftDeletes;use Auditable;
 
     /**
      * The attributes that are mass assignable.
@@ -40,7 +40,7 @@ class Student extends Model
     public static $searchable = [
         'name',
         'phone',
-        'note'
+        'note',
     ];
 
     /**

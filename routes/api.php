@@ -20,7 +20,7 @@ Route::namespace('API\General\Auth')->prefix('general/auth/')->group(function ()
     
     Route::middleware(['auth:api','role:client'])->group(function () {
         Route::post('ChangePassword', 'ChangePasswordController@ChangePassword');
-        Route::post('verification','VerificationController@verification');
+        Route::post('verification', 'VerificationController@verification');
         Route::post('logout', 'LoginController@logout');
         Route::put('UpdateUser', 'LoginController@UpdateUser');
         Route::get('user', 'LoginController@user');

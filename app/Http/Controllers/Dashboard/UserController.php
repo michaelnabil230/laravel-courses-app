@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\Dashboard\UserRequest;
 
 class UserController extends Controller
 {
@@ -43,7 +43,7 @@ class UserController extends Controller
         $validated = $request->safe()->except(['password', 'password_confirmation']);
 
         User::create($validated + [
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
 
         $this->success('dashboard.added_successfully');
@@ -61,7 +61,7 @@ class UserController extends Controller
         $validated = $request->safe()->except(['password', 'password_confirmation']);
 
         $user->update($validated + [
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
 
         $this->success('dashboard.updated_successfully');

@@ -1,19 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\AdminController;
-use App\Http\Controllers\Dashboard\CourseController;
-use App\Http\Controllers\Dashboard\StudentController;
-use App\Http\Controllers\Dashboard\TrainerController;
-use App\Http\Controllers\Dashboard\WelcomeController;
-use App\Http\Controllers\Dashboard\LocationController;
-use App\Http\Controllers\Dashboard\MessengerController;
-use App\Http\Controllers\Dashboard\GlobalSearchController;
-use App\Http\Controllers\Dashboard\Setting\BackupController;
-use App\Http\Controllers\Dashboard\Setting\SettingController;
-use App\Http\Controllers\Dashboard\Setting\AuditLogController;
-
 use App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Dashboard\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Dashboard\Auth\EmailVerificationNotificationController;
@@ -22,6 +9,19 @@ use App\Http\Controllers\Dashboard\Auth\NewPasswordController;
 use App\Http\Controllers\Dashboard\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Dashboard\Auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\Auth\VerifyEmailController;
+use App\Http\Controllers\Dashboard\CourseController;
+use App\Http\Controllers\Dashboard\GlobalSearchController;
+use App\Http\Controllers\Dashboard\LocationController;
+use App\Http\Controllers\Dashboard\MessengerController;
+
+use App\Http\Controllers\Dashboard\Setting\AuditLogController;
+use App\Http\Controllers\Dashboard\Setting\BackupController;
+use App\Http\Controllers\Dashboard\Setting\SettingController;
+use App\Http\Controllers\Dashboard\StudentController;
+use App\Http\Controllers\Dashboard\TrainerController;
+use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\WelcomeController;
+use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest:admin')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');

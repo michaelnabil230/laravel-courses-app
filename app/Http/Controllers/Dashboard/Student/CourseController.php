@@ -34,7 +34,7 @@ class CourseController extends Controller
     public function store(Request $request, Course $course)
     {
         $request->validate([
-            'student_id' => ['required', 'exists:students,id']
+            'student_id' => ['required', 'exists:students,id'],
         ]);
 
         $course->students()->attach($request->student_id);

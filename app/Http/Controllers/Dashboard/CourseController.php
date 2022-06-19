@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Course;
-use App\Models\Trainer;
-use App\Models\Location;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\CourseRequest;
+use App\Models\Course;
+use App\Models\Location;
+use App\Models\Trainer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -41,6 +41,7 @@ class CourseController extends Controller
     {
         $trainers = Trainer::pluck('id', 'name');
         $locations = Location::get();
+
         return view('dashboard.courses.create', compact('trainers', 'locations'));
     }
 
